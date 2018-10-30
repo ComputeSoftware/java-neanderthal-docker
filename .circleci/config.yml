@@ -1,0 +1,36 @@
+version: 2.1
+
+defaults: &defaults
+  docker:
+    - image: docker:17.05.0-ce-git
+
+jobs:
+  publish-docker:
+    <<: *defaults
+
+    steps:
+      - checkout
+      - setup_remote_docker
+
+      - run:
+          name: Build Docker image
+          command: |
+            docker build -t computesoftware/java-neanderthal:$CIRCLE_SHA1 .
+
+      - run:
+          name: Publish image
+          command: |
+            docker login -u $DOCKER_USER -p $DOCKER_PASS
+            docker push
+
+
+workflows:
+  version: 2
+  ci-workflow:
+    jobs:
+      - publish-docker:
+          context: docker-env
+          filters:
+            branches:
+              only:
+                - master
