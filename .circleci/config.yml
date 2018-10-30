@@ -21,7 +21,7 @@ jobs:
           name: Publish image
           command: |
             docker login -u $DOCKER_USER -p $DOCKER_PASS
-            docker push
+            docker push computesoftware/java-neanderthal:$CIRCLE_SHA1
 
 
 workflows:
