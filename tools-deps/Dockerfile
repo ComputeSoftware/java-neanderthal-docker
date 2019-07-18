@@ -1,4 +1,4 @@
-FROM circleci/clojure:tools-deps-1.9.0.381
+FROM circleci/clojure:tools-deps-1.10.0.442
 
 USER root
 
