@@ -1,4 +1,4 @@
-FROM circleci/clojure:openjdk-11-tools-deps-1.10.0.442
+FROM circleci/clojure:openjdk-8-tools-deps-1.10.0.442
 
 USER root
 
