@@ -2,7 +2,7 @@ version: 2.1
 
 defaults: &defaults
   docker:
-    - image: docker:17.05.0-ce-git
+    - image: docker:18.09.8-git
 
 jobs:
   publish-docker:
