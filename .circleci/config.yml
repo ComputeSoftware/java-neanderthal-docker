@@ -6,11 +6,12 @@ defaults: &defaults
 
 jobs:
   publish-docker:
-    <<: *defaults
+#    <<: *defaults
 
+    machine: true
     steps:
       - checkout
-      - setup_remote_docker
+#      - setup_remote_docker
 
       - run:
           name: Build Docker image
