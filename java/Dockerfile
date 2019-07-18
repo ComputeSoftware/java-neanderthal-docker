@@ -1,4 +1,4 @@
-FROM java:8
+FROM openjdk:11
 
 # Intel install guide: https://software.intel.com/en-us/articles/installing-intel-free-libs-and-python-apt-repo
 # Blog post install guide: http://dirk.eddelbuettel.com/blog/2018/04/15/
